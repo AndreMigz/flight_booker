@@ -1,0 +1,36 @@
+<%= form_with(url: "/flights", method: "get", local: true) do %>
+  <% @airport_options = Airport.all.map { |airport| [airport.code, airport.id] } %>
+  <% @year_options = Flight.all.map { |flight| flight.scheduled_on.year }.uniq %>
+  <% @month_options = Flight.all.map { |flight| flight.scheduled_on.month }.uniq %>
+  <% @day_options = Flight.all.map { |flight| flight.scheduled_on.day }.uniq %>
+
+
+  <div class="container">
+    <div class="select">
+      <%= select_tag(:from_airport_id, options_for_select(@airport_options, selected: params[:from_airport_id]), { prompt: 'From?' }) %>
+    </div>
+    <div class="select">
+      <%= select_tag(:to_airport_id, options_for_select(@airport_options, selected: params[:to_airport_id]), { prompt: 'To?' }) %>
+    </div>
+  
+    <div class="select">
+      <%= select_tag(:pax, options_for_select(1..4, selected: params[:pax]), { prompt: 'Passengers' }) %>
+    </div>
+    <div class="select">
+      <%= select_tag(:day, options_for_select(@day_options, selected: params[:day])) %>
+    </div>
+    <div class="select">
+      <%= select_tag(:month, options_for_select(@month_options, selected: params[:month])) %>
+    </div>
+    <div class="select">
+      <%= select_tag(:year, options_for_select(@year_options, selected: params[:year])) %>
+    </div>
+    
+    <div class="field is-grouped is-grouped-right">
+      <div class="control">
+        <%= submit_tag("Show flights", class: "button is-dark is-outlined") %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

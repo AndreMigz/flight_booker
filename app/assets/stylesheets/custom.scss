@@ -1,0 +1,36 @@
+//@import 'bootstrap';
+@import 'bulma';
+
+
+.navbar {
+    h1{
+        margin: auto;
+        font-size: 21px;
+        font-weight: bold;
+    }
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+    .select {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+}
+
+// Flight index
+.section {
+    text-align: center;
+
+    .content {
+        margin: 5px;
+    }
+    .content:last-of-type {
+        margin-bottom: 15px;
+    }
+}
+

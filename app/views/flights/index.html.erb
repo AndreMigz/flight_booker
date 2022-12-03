@@ -1,0 +1,12 @@
+<%= render "search" %>
+<% unless @available_flights.nil? %>
+    <% if @available_flights.any? %>
+        <div class="section">
+            <h2 class="content is-medium" > Scheduled flights for <%= Airport.find(params[:from_airport_id]).code %> to <%= Airport.find(params[:to_airport_id]).code %></h2>
+            <h2 class="content is-medium" ><%= @selected_date.strftime('%B %d, %Y') %></h2>
+            <%= render "search_result" %>
+        </div>
+    <% else %>
+        <p>There are no available flights on the selected date</p>
+    <% end%>
+<% end%>
