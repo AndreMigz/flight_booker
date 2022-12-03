@@ -5,7 +5,8 @@
   <% @day_options = Flight.all.map { |flight| flight.scheduled_on.day }.uniq %>
 
 
-  <div class="container">
+  <div class="search">
+    <h2>Search For:</h2>
     <div class="select">
       <%= select_tag(:from_airport_id, options_for_select(@airport_options, selected: params[:from_airport_id]), { prompt: 'From?' }) %>
     </div>

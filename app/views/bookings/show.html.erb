@@ -1,0 +1,66 @@
+<div class="container">
+    <h1>Trip Summary</h1>
+    <h2>
+        <%= @booking.flight.scheduled_on.strftime('%d %B %Y')%>
+    </h2>
+    <div class="container-section">
+        <h3>Flight Destination</h3>
+        <table class="table is-bordered is-narrow is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Departure</th>
+                    <th>Arrival</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong><%= @booking.flight.from_airport.code %></strong> 
+                        <%= @booking.flight.scheduled_on.strftime('%H:%M') %></td>
+                    <td><strong><%= @booking.flight.to_airport.code %></strong>
+                        <%= (@booking.flight.scheduled_on + (@booking.flight.duration/60).to_i.hours).strftime('%H:%M')%>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container-section">
+        <h3>Passenger's Informations</h3>
+        <table class="table is-bordered is-narrow is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Passenger name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @booking.passengers.each_with_index do |passenger, index|%>
+                    <tr>
+                        <td><%= passenger.name %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container-section">
+        <h3>Contact Details</h3>
+        <table class="table is-bordered is-narrow is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @booking.passengers.each_with_index do |passenger, index| %>
+                    <tr>
+                        <td><%= passenger.name %></td>
+                        <td><%= passenger.email %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+    <%= link_to "Back to Home Page", root_path, class:"button is-link is-fullwidth" %>
+</div>

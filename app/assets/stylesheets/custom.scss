@@ -3,18 +3,36 @@
 
 
 .navbar {
-    h1{
-        margin: auto;
-        font-size: 21px;
-        font-weight: bold;
+    padding: 15px;
+
+    .header {
+        display: flex;
+        align-items: center;
+
+        img{
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+        }
+        .h1{
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
     }
+    
 }
 
-.container{
+.search{
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px;
+
+    h2 {
+        margin-right: 5px;
+        font-weight: bold;
+    }
 
     .select {
         font-size: 16px;
@@ -26,6 +44,27 @@
 .section {
     text-align: center;
 
+    h2:first-of-type{
+        font-size: 22px;
+        font-weight: bold ;
+    }
+    
+    h2{
+        font-size: 20px;
+    }
+
+    .result-card {
+        padding: 15px;
+        margin-bottom: 30px;
+        text-align: center;
+        border-radius: 10px;
+        border: 3px solid rgb(13, 56, 212);
+        background: #f8f8f8;
+    }
+    .result-card:first-of-type {
+        margin-top: 40px;
+    }
+
     .content {
         margin: 5px;
     }
@@ -33,4 +72,63 @@
         margin-bottom: 15px;
     }
 }
+
+//Booking New
+.card {
+    width: 400px;
+    margin: 200px auto;
+    padding: 15px;
+    text-align: center;
+    border: 3px solid rgb(13, 56, 212);
+    background: #fffbfb;
+    box-shadow: 15px 15px 30px #bebebe,
+                -15px -15px 30px #ffffff;
+
+    .summary {
+        border-bottom: 1px solid black;
+        margin-bottom: 20px;
+
+
+        h1,.form {
+            margin-bottom: 10px;
+        }
+
+        h1{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        .form {
+
+        }
+    }
+}
+
+//Flight show details
+.container{
+    margin-top: 20px;
+    display: block;
+    border: 3px solid rgb(13, 56, 212);
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    width: 400px;
+    background: #fffcfc;
+    box-shadow: 15px 15px 30px #bebebe,
+                -15px -15px 30px #ffffff;
+    h1 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    h2 {
+        margin-bottom: 10px;
+    }
+    .container-section {
+        margin-bottom: 10px;
+    }
+}
+
 

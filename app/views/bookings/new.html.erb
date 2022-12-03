@@ -1,16 +1,19 @@
-<% departure_flight = @selected_flight.from_airport.code %>
-<% arrival_flight = @selected_flight.to_airport.code %>
-<% selected_date = @scheduled_flight.scheduled_on.strftime('%B d%, %Y')%>
-<% scheduled_time = @scheduled_flight.scheduled_on.strftime('%H:%M')%>
-<% arrival_time = (@scheduled_flight.scheduled_on + (@selected_flight.duration/60).to_i_hours).strftime('%H:%M')%>
+<!--Init variables-->
+<% departure_airport= @selected_flight.from_airport.code %>
+<% arrival_airport = @selected_flight.to_airport.code %>
+<% selected_date = @selected_flight.scheduled_on.strftime('%B %d, %Y')%>
+<% scheduled_time = @selected_flight.scheduled_on.strftime('%H:%M')%>
+<% arrival_time = (@selected_flight.scheduled_on + (@selected_flight.duration/60).to_i.hours).strftime('%H:%M')%>
 
-<div class="summary">
-    <h2>Trip Details</h2>
-    <h3>
-        <%= selected_date %> | <%= departure_airport %> - <%= arrival_airport %> | <%= scheduled_time %> - <%= arrival_time%>
-    </h3>
-</div>
+<div class="card">
+    <div class="summary">
+        <h1>Trip Details</h1>
+        <h3>
+            <%= selected_date %> | <%= departure_airport %> - <%= arrival_airport %> | <%= scheduled_time %> - <%= arrival_time%>
+        </h3>
+    </div>
 
-<div class= "form" >
-    <%#= render "form" %>
+    <div class= "form" >
+        <%= render "form" %>
+    </div>
 </div>

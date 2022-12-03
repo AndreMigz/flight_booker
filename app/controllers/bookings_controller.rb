@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-    include BookingHelper
+    include BookingsHelper
 
     def new
         @booking = Booking.new
@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     def create
         @booking = Booking.new(booking_params)
         if @booking.save
-            flash[:notice] = "Booking successful!"
+            flash[:notice] = "Flight Booking successful!"
             #@booking.passengers.each do |passenger|
             #    PassengerMailer.confirmation_email(passenger).deliver.now
             #end
