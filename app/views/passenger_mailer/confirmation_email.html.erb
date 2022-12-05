@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charrset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h1>To: <%= @passenger.name%>,</h1>
+
+        <p>Thank you for trusting <strong>Odin Flight Booker</strong>!</p>
+        <p>This email is sent to confirm that you booked successfully for the following flight.</p>
+        
+        <h4><%= @selected_date %></h4>
+        <p> Booking Number: <strong>ODNFB<%= @passenger.booking.id%></strong></p>
+
+        <table>
+            <tr>
+                <th>Departure</th>
+                <th>Arrival</th>
+            </tr>
+            <tr>
+                <td><%= @departure_airport %></td>
+                <td><%= @arrival_airport %></td>
+            </tr>
+            <tr>
+                <td><%= @scheduled_time %></td>
+                <td><%= @arrival_time %></td>
+            </tr>
+        </table>        
+
+        <h3>Welcome Aboard!</h3>
+    </body>
+</html>

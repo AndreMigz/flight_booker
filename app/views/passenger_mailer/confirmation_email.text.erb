@@ -1,0 +1,18 @@
+To: <%= @passenger.name %>
+=================================
+
+Thank you for trusting Odin Flight Booker
+
+This email is sent to confirm that you booked successfully for
+the following flight: 
+
+Date : <%= @selected_date %>
+Booking Number : ODNFB<%= @passenger.booking.id%>
+
+Departure : <%= @departure_airport%> 
+Scheduled Time: <%= @scheduled_time%>
+
+Arrival : <%= @arrival_airport%> 
+Arrival Time: <%= @arrival_time%>
+
+Welcome Aboard!
